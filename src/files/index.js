@@ -19,7 +19,10 @@ router.post(
       await writeFile(
         join(
           projectsImagePath,
-          join(projectsImagePath, req.param.id + extname(req.file.originalname))
+          join(
+            projectsImagePath,
+            req.params.id + extname(req.file.originalname)
+          )
         ),
         req.file.buffer
       );
